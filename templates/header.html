@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Employee WWW</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+    </head>
+    <body>
+        <div class="layout">
+            <header>
+                <nav>
+                    <ul>
+                        <li {%- if request.path == "/products" %} class="currentpage"{% endif %}>
+                            <a href="/products">Products</a>
+                        </li>
+                        <li {%- if request.path == "/services" %} class="currentpage"{% endif %}>
+                            <a href="/services">Services</a>
+                        </li>
+                        <li {%- if request.path == "/bulletin" %} class="currentpage"{% endif %}>
+                            <a href="/bulletin">Bulletin Board</a>
+                        </li>
+                        <li {%- if request.path == "/employees" %} class="currentpage"{% endif %}>
+                            <a href="/employees">Employee Portal</a>
+                        </li>
+                        <li {%- if request.path == "/login" %} class="currentpage"{% endif %}>
+                            <a href="/login">Login</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <div class="center">
+                    {% block content %}{% endblock %}
+                </div>
+            </main>
+            <footer>
+                <p>Something something footer?</p>
+            </footer>
+        </div>
+    </body>
+</html>

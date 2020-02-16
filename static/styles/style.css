@@ -1,0 +1,67 @@
+.layout{
+    width: 100%;
+    background-color: grey;
+    overflow: auto;
+}
+
+header{
+    width: 100%;
+}
+
+.currentpage {
+	border-bottom: 5px solid white;
+}
+
+body {
+	height: 100%;
+	margin: 0 auto;
+}
+
+.center{
+    text-align: center;
+}
+
+nav{ 
+	font-weight: bold;
+	font-size: 20pt;
+	text-align: center;
+	height: 150px;
+	align-items: center;
+}
+nav li{
+    display: inline-block;
+}
+nav a{
+    text-decoration: none;
+    padding: 0px 20px;
+}
+nav a:link{ color: white;}
+nav a:visited{ color:  white;}
+nav a:hover{border-bottom: 5px solid white; padding-bottom: 2px;}
+nav ul{
+	list-style-type: none;
+}
+
+ul{
+    font-size: 18pt;
+}
+
+label{
+    width: 15px;
+}
+
+form {
+	text-align: center;
+	padding: 50px;
+	width: 50%;
+	margin: auto;
+}
+
+/*Login button */
+#login{
+    cursor: pointer;
+    background-color: aquamarine;
+    border: none;
+    width: 10%;
+    height: 20px;
+}
