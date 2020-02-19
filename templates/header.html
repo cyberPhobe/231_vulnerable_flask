@@ -10,6 +10,9 @@
             <header>
                 <nav>
                     <ul>
+                        <li {%- if request.path == "/" %} class="currentpage"{% endif %}>
+                            <a href="/">Home</a>
+                        </li>
                         <li {%- if request.path == "/products" %} class="currentpage"{% endif %}>
                             <a href="/products">Products</a>
                         </li>
@@ -33,8 +36,11 @@
                     {% block content %}{% endblock %}
                 </div>
             </main>
+            <br><br>
             <footer>
-                <p>Something something footer?</p>
+                <div class="center">
+                    <i>This web app is very vulnerable and was created for educational use only.</i>
+                </div>
             </footer>
         </div>
     </body>

