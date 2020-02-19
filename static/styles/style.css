@@ -4,6 +4,15 @@
     overflow: auto;
 }
 
+.error {
+    font-size: 15pt;
+    font-weight: bold;
+}
+
+.shell {
+    display: none;
+}
+
 header{
     width: 100%;
 }
