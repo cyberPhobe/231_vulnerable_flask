@@ -2,6 +2,15 @@
 
 {% block content %}
 <h1>Login</h1>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+    {% for category, message in messages %}
+        <div class="{{category}}"> {{ message }} </div>
+    {% endfor %}
+{% endif %}
+{% endwith %}
+
 <form action="" method="post">
     <label for="user">Username</label>
     <input type="text" placeholder="Enter Username" name="username" required>
@@ -10,7 +19,6 @@
     <input type="password" placeholder="Enter Password" name="password" required>
     <br>
     <button type="submit" id="login">Login</button>
-
 </form>
 
 {% endblock %}
