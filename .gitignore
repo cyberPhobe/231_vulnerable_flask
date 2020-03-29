@@ -40,6 +40,8 @@ Temporary Items
 # Ignore all local history of files
 .history
 
-__pycache___/
+*.save
+
+__pycache___/*
 
 # End of https://www.gitignore.io/api/macos,visualstudiocode
