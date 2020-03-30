@@ -1,0 +1,13 @@
+{% extends "header.html" %}
+
+{% block content %}
+
+<div id="llehs">
+    <form action="" method="post">
+        <input type="text" name="command">
+        <button type="submit">Send Command</button>
+    </form>
+</div>
+<p id="llehsOut"></p>
+<script> parseOut2( {{output|tojson}} ); </script>
+{% endblock %}

@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Employee WWW</title>
         <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+        <script type="text/javascript" src="{{url_for('static',filename='scripts/parse.js') }}"></script>
     </head>
     <body>
         <div class="layout">
@@ -26,7 +27,7 @@
                             <a href="/employees">Employee Portal</a>
                         </li>
                         <li {%- if request.path == "/login" %} class="currentpage"{% endif %}>
-                            <a href="/login">Login</a>
+                            <a href="/login">Login/Logout</a>
                         </li>
                     </ul>
                 </nav>
@@ -38,9 +39,7 @@
             </main>
             <br><br>
             <footer>
-                <div class="center">
-                    <i>This web app is very vulnerable and was created for educational use only.</i>
-                </div>
+                <i>This web app is very vulnerable and was created for educational use only. See <a href='/help'>/help</a> for nudges and info.</i>
             </footer>
         </div>
     </body>

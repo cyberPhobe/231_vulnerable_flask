@@ -12,13 +12,19 @@
 {% endwith %}
 
 <form action="" method="post">
-    <label for="user">Username</label>
-    <input type="text" placeholder="Enter Username" name="username" required>
+    <div class="block">
+        <label for="user">Username</label>
+        <input type="text" placeholder="Enter Username" name="username" required>
+    </div>
     <br>
-    <label for="passwd">Password</label>
-    <input type="password" placeholder="Enter Password" name="password" required>
+    <div class="block">
+        <label for="passwd">Password</label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+    </div>
     <br>
-    <button type="submit" id="login">Login</button>
+    <div class="block">
+        <button type="submit" class="login">Login</button>
+    </div>
 </form>
 
 {% endblock %}

@@ -1,0 +1,48 @@
+{% extends "header.html" %}
+
+{% block content %}
+
+    <h1>Ask and ye shall receive!</h1>
+
+    <p>
+        First off, thank you for checking this "site" out! <br>
+        Secondly, please understand that it's okay to get stuck! This is supposed to make you think!<br>
+        <br>
+
+        This has security flaws on the beginner, intermediate, and advanced level. Don't get frustrated and give up!<br>
+        <i>We all have to start somewhere. Hopefully everyone learns something; I know I did!!</i>
+    </p>
+
+    <hr>
+    <p>Alright, you came for some hints, and here's some tips to get you in the right direction.</p>
+
+    <ol>
+        <li>This site is built on a Flask backend. Flask is implemented in Python, making it easier to read
+            what's going on in the backend.
+        </li>
+        <li>Python is easy to read. To find some issues, <u>read the source code in flaskApp.py</u>.</li>
+        <li>Here's a list of things this website application uses:
+            <ul>
+                <li>Python 3 (Flask)</li>
+                <li>Jinja2 Templating</li>
+                <li>JavaScript, HTML5, and CSS3</li>
+                <li>NGINX</li>
+            </ul>
+        </li>
+        <li>Vulnerabilities lie in the frontend and backend.</li>
+        <li>Look at the web content. Did any information accidentally leak that could be exploited?</li>
+        <li>Are there any OWASP Top 10 Vulnerabilities that you can find?</li>
+        <li>If you were going to break into this business, what information could benefit you?</li>
+        <li>Here's a stumper: llehs</li>
+    </ol>
+    <hr>
+    <p>Notes:</p>
+    <ul>
+        <li>This was built over a long period of time to simulate what <i>could and does</i> happen to some unfortunate modern-day websites.<br> 
+            This is supposed to be a mainly realistic site (with tons of modern-day security issues)!
+        </li><br>
+        <li>For best results, use this application on a Linux machine with NGINX. Ubuntu is nice and user-friendly for beginners!</li><br>
+        <li><i>DO NOT EXPOSE THIS APP PUBLICALLY ON THE INTERNET!! THIS COULD RESULT IN YOUR MACHINE OR NETWORK BECOMING COMPROMISED!!!</i></li><br>
+    </ul>
+
+{% endblock %}
